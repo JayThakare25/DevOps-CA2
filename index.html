@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Registration Form</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Internal CSS (As per Sub Task 2 requirement) -->
+    <style>
+        /* Internal CSS specifically styling the header area as an example of internal styling */
+        header {
+            text-align: left;
+            margin-bottom: 2.5rem;
+            color: #111827;
+        }
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.025em;
+        }
+        header p {
+            font-size: 0.95rem;
+            color: #6b7280;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <header>
+            <h1>Student Feedback</h1>
+            <p>Please share your valuable feedback with us.</p>
+        </header>
+
+        <form id="feedbackForm" action="#" novalidate>
+            <!-- Success Message area -->
+            <div id="successMessage" class="hidden">Form submitted successfully! Thank you for your feedback.</div>
+
+            <!-- Student Name -->
+            <div class="form-group">
+                <label for="studentName">Student Name <span class="required">*</span></label>
+                <input type="text" id="studentName" name="studentName" placeholder="John Doe">
+                <span class="error-message" id="error-studentName"></span>
+            </div>
+
+            <!-- Email ID -->
+            <div class="form-group">
+                <label for="emailId">Email ID <span class="required">*</span></label>
+                <input type="email" id="emailId" name="emailId" placeholder="john.doe@example.com">
+                <span class="error-message" id="error-emailId"></span>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number <span class="required">*</span></label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="9876543210">
+                <span class="error-message" id="error-mobileNumber"></span>
+            </div>
+
+            <!-- Department -->
+            <div class="form-group">
+                <label for="department">Department <span class="required">*</span></label>
+                <select id="department" name="department">
+                    <option value="">Select Department</option>
+                    <option value="CS">Computer Science</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="ME">Mechanical Engineering</option>
+                    <option value="CE">Civil Engineering</option>
+                    <option value="EE">Electrical Engineering</option>
+                </select>
+                <span class="error-message" id="error-department"></span>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label>Gender <span class="required">*</span></label>
+                <div class="radio-group" id="genderGroup">
+                    <label class="radio-label">
+                        <input type="radio" name="gender" value="Male" id="genderMale">
+                        <span class="radio-custom"></span> Male
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="gender" value="Female" id="genderFemale">
+                        <span class="radio-custom"></span> Female
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="gender" value="Other" id="genderOther">
+                        <span class="radio-custom"></span> Other
+                    </label>
+                </div>
+                <span class="error-message" id="error-gender"></span>
+            </div>
+
+            <!-- Feedback Comments -->
+            <div class="form-group">
+                <label for="feedbackComments">Feedback Comments (Min 10 words) <span class="required">*</span></label>
+                <textarea id="feedbackComments" name="feedbackComments" rows="4" placeholder="Share your experience..."></textarea>
+                <span class="error-message" id="error-feedbackComments"></span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="form-actions">
+                <button type="submit" id="submitBtn" class="btn btn-primary">Submit Feedback</button>
+                <button type="reset" id="resetBtn" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
+</html>

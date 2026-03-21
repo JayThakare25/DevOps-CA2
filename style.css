@@ -1,0 +1,211 @@
+/* Minimalist and Modern CSS */
+
+:root {
+    --primary: #111827;      /* near black */
+    --primary-hover: #374151;
+    --bg-color: #f9fafb;     /* subtle off-white */
+    --card-bg: #ffffff;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border: #e2e8f0;
+    --border-focus: #111827;
+    --error: #ef4444;
+    --success-bg: #ecfdf5;
+    --success-text: #065f46;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+.form-container {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 480px;
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--border);
+}
+
+/* Header styled via internal CSS in index.html to fulfill Sub Task 2 */
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+}
+
+.required {
+    color: var(--error);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem 0;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-bottom-color: var(--border-focus);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9ca3af;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+    padding-top: 0.5rem;
+}
+
+select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.2rem;
+    padding-right: 2.5rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    margin-right: 0.6rem;
+    outline: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"]:checked {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    box-shadow: inset 0 0 0 3px var(--card-bg);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.btn {
+    flex: 1;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s;
+    border: none;
+    letter-spacing: 0.01em;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background-color: #f3f4f6;
+}
+
+.error-message {
+    display: block;
+    color: var(--error);
+    font-size: 0.75rem;
+    margin-top: 0.4rem;
+    min-height: 1rem;
+}
+
+.form-group.has-error input[type="text"],
+.form-group.has-error input[type="email"],
+.form-group.has-error input[type="tel"],
+.form-group.has-error select,
+.form-group.has-error textarea {
+    border-bottom-color: var(--error);
+}
+
+#successMessage {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid #a7f3d0;
+}
+
+.hidden {
+    display: none !important;
+}
