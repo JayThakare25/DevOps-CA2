@@ -1,17 +1,17 @@
 /* Minimalist and Modern CSS */
 
 :root {
-    --primary: #111827;      /* near black */
-    --primary-hover: #374151;
-    --bg-color: #f9fafb;     /* subtle off-white */
-    --card-bg: #ffffff;
-    --text-main: #111827;
-    --text-muted: #6b7280;
-    --border: #e2e8f0;
-    --border-focus: #111827;
+    --primary: #1e3a8a;      /* navy blue */
+    --primary-hover: #1e40af;
+    --bg-color: #1f2937;     /* more gray (gray-800) */
+    --card-bg: #374151;      /* lighter gray container (gray-700) */
+    --text-main: #f9fafb;    /* white/light gray */
+    --text-muted: #d1d5db;   /* visible light gray */
+    --border: #4b5563;       /* gray border */
+    --border-focus: #3b82f6;
     --error: #ef4444;
-    --success-bg: #ecfdf5;
-    --success-text: #065f46;
+    --success-bg: #064e3b;
+    --success-text: #a7f3d0;
 }
 
 body {
@@ -26,6 +26,7 @@ body {
     padding: 2rem 1rem;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    color-scheme: dark;
 }
 
 .form-container {
@@ -97,11 +98,16 @@ select {
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d1d5db'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0.5rem center;
     background-size: 1.2rem;
     padding-right: 2.5rem;
+}
+
+select option {
+    background-color: var(--card-bg);
+    color: var(--text-main);
 }
 
 .radio-group {
@@ -175,7 +181,8 @@ select {
 }
 
 .btn-secondary:hover {
-    background-color: #f3f4f6;
+    background-color: var(--border);
+    color: var(--text-main);
 }
 
 .error-message {
